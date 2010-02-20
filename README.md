@@ -6,14 +6,8 @@ or failure:
 
     $ growlme ant clean package
 
-To make growl receive remote notifications, you need to turn on "Allow remote application
-registration" in the "Network" tab of growl's preferences panel. Set a password, and put that
-password in `~/.growlpass` or pass it via the `-P` parameter. You'll need to go back to General tab,
-hit Stop Growl, then start it back up and allow it to accept network connections.
-
-In the simplest case, growlme runs locally on a machine that is running growl, and sends the
-notification over a local UDP port. But it can also work over a LAN if the `SSHCLIENT` environment
-variable is set, or you pass a hostname explicitly via the `-H` parameter.
+Be sure to have growlnotify installed for this version to work. If you wish to use the network version
+please visit [the original author's implementation](http://github.com/robey/growlme).
 
 By default, the notification's title is "(hostname): (command)" and the message is either
 "Succeeded" or "FAILED". You can change any of these on the command line (see `--help`).
@@ -24,6 +18,8 @@ Credits
 Most of the code is Rui Carmo's "netgrowl", included inline and edited down a bit. You can find the
 original [on his web site](http://the.taoofmac.com/space/Projects/netgrowl). Greg added the CLI
 wrapper and Robey generalized it into a something that executes other programs.
+
+Zeebo removed most of the "netgrowl" code and replaced it with one line that calls growlnotify instead.
 
 License
 -------
