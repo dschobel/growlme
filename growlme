@@ -32,6 +32,7 @@
 import optparse
 import subprocess
 import sys
+import socket
 
 if __name__ == '__main__':
     parser = optparse.OptionParser(usage='usage: %prog [options] <command...>')
